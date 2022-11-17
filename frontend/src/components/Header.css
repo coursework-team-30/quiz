@@ -1,0 +1,13 @@
+.header {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    line-height: 1rem;
+    padding-left: 5em;
+    font-family: 'Playfair Display', serif;
+    width: 96.7vw;
+}
+
+.subHeader {
+    margin-top: -0.4em;
+}
