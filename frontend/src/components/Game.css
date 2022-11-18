@@ -3,6 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 
@@ -18,9 +20,30 @@
     margin-top: 5em;
     padding: 0.5em 2em;
     border-radius: 15px;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 .next-button:hover {
     cursor: pointer;
     background-color: rgb(27, 27, 166);
+   
+}
+
+.but {
+    padding: 0.5em 5em;
+    background-color: grey;
+    border: 1px solid rgb(108, 107, 107);
+    border-radius: 6px;
+    margin-right: 2em;
+    color: rgb(240, 237, 237);
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto Slab', serif;
+    box-shadow: 2px 2px 1px #b8b8b8;
+}
+
+.but:hover {
+    cursor: pointer;
+    background-color: rgb(221, 220, 220);
+    color: black;
 }
