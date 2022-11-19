@@ -53,7 +53,7 @@
 
 .but:hover {
     cursor: pointer;
-    background-color: rgb(221, 220, 220);
+    background-color: rgb(238, 235, 235);
     color: black;
 }
 
@@ -62,5 +62,6 @@
 }
 
 .hoverOption {
-    background-color: rgb(4, 113, 135);
+    background-color: rgb(221, 220, 220);
+    color: black;
 }
