@@ -55,3 +55,11 @@
     background-color: rgb(221, 220, 220);
     color: black;
 }
+
+.greenBG {
+    background-color: green;
+}
+
+.hoverOption {
+    background-color: rgb(4, 113, 135);
+}
