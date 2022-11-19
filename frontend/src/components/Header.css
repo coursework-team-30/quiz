@@ -1,7 +1,8 @@
 .header {
-    background-color: aqua;
+    /* background-color: rgb(201, 244, 244); */
     display: flex;
     line-height: 1rem;
+
     flex-direction: column;
     font-family: 'Playfair Display', serif;
     width: 100%;
@@ -12,6 +13,7 @@
 }
 
 .subHeader {
-    margin-top: -0.4em;
-    padding-left: 2em;
+    margin-top: 0.2em;
+    padding-left: 3em;
+    font-weight: 100;
 }
