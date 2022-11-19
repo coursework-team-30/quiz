@@ -1,13 +1,17 @@
 .header {
     background-color: aqua;
     display: flex;
-    flex-direction: column;
     line-height: 1rem;
-    padding-left: 5em;
+    flex-direction: column;
     font-family: 'Playfair Display', serif;
-    width: 96.7vw;
+    width: 100%;
+}
+
+.headTitle {
+    padding-left: 2em;
 }
 
 .subHeader {
     margin-top: -0.4em;
+    padding-left: 2em;
 }
