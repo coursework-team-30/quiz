@@ -57,8 +57,10 @@ const Game = () => {
 
 
   return (
+   
     <div className='game'>
         <Header/>
+        <div className='container'>
         <h2 className='question'>Question {countQuestion}/5</h2>
         <h3>Time Left: {timer}</h3>
         
@@ -70,6 +72,7 @@ const Game = () => {
             <button style={{backgroundColor: `${answer}`=== 'd'? 'rgb(4, 113, 135)':'grey' }} onClick={(e) => selectAnswer(e)} className='but' value={"d"}>{options[3]}</button>
       </div>
         <button onClick={submitAnswers} className='next-button'>Next Question</button>
+        </div>
     </div>
   )
 }
