@@ -1,0 +1,19 @@
+.header {
+    /* background-color: rgb(201, 244, 244); */
+    display: flex;
+    line-height: 1rem;
+
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    width: 100%;
+}
+
+.headTitle {
+    padding-left: 2em;
+}
+
+.subHeader {
+    margin-top: 0.2em;
+    padding-left: 3em;
+    font-weight: 100;
+}
