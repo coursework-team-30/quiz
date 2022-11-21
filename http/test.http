@@ -1,0 +1,2 @@
+GET http://localhost:8091/api/quiz/get10
+content-type: application/json
