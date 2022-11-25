@@ -1,12 +1,13 @@
 .badgeImg {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    margin-top: -3vh;
 }
 
 .score {
     font-family: 'Rakkas', cursive;
     font-weight: 400;
-    font-size: 96px;
+    font-size: 70px;
     margin-top: -3vh;
     text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
 }
