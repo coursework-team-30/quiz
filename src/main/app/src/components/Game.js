@@ -3,7 +3,8 @@ import Header from './Header'
 import './Game.css'
 import data from '../demoData'
 import Result from './Result'
-// import timer from '../../public/img/timer.png'
+import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 const Game = () => {
 
@@ -17,7 +18,6 @@ const Game = () => {
   const [correctAnswer,setCorrectAnswer] = useState(data.questions[randomElement].answer);
   const [score,setScore] = useState(0);
   const [classCorrectAnswer, setClassCorrectAnswer] = useState("");
-  const [isQuizFinished,setIsQuizFinished] = useState(false);
   const [isSubmited,setIsSubmited] = useState(false);
 
 
@@ -28,7 +28,9 @@ const Game = () => {
     }
 
     if(timer===0)
-      setIsQuizFinished(() => true)
+      {
+        routeChangeToResult();
+      }
   },[timer])
 
 
@@ -41,6 +43,26 @@ const Game = () => {
       setScore((prev) => prev + 1);
     }
   }
+
+
+  
+  let navigate = useNavigate(); 
+  const routeChangeToResult = () =>{ 
+    let path = `/result`; 
+    navigate(path, { state: { score:score, timer:timer, isSubmited:isSubmited } });
+  }
+
+
+  //  const getQuestions = async () => {
+  //   try {
+  //     const response = await axios.get('http://localhost:8091/api/quiz/get10');
+  //     console.log(response);
+  //   } catch(error) {
+  //     console.log(error);
+  //   }
+  // }
+
+  // getQuestions();
 
 
   const nextQuestion = () => {
@@ -57,9 +79,8 @@ const Game = () => {
 
   const submitAnswers = (e) => {
     if(countQuestion>4){
-      setIsQuizFinished(()=> true)
       setIsSubmited(true);
-
+      routeChangeToResult();
       console.log(score);
     }else{
       nextQuestion()
@@ -71,8 +92,7 @@ const Game = () => {
    
     <div className='game'>
         <Header/>
-        {!isQuizFinished? 
-        (<div className='container'> 
+        <div className='container'> 
           <div className='question-row'>
             <h1 style={{visibility:"hidden"}}>Blank</h1>
             <h2 className='question'>Question {countQuestion}/5</h2>
@@ -105,7 +125,7 @@ const Game = () => {
       </div>
         
         <button onClick={(e) => submitAnswers(e)} className='next-button'>{countQuestion>=5? "Submit" : "Next Question"}</button> 
-        </div> ) : (<Result score={score} timer={timer} isSubmited={isSubmited}/>) }
+        </div> 
     </div>  
   )
 }
