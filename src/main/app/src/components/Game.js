@@ -3,6 +3,7 @@ import Header from './Header'
 import './Game.css'
 import data from '../demoData'
 import Result from './Result'
+// import timer from '../../public/img/timer.png'
 
 const Game = () => {
 
@@ -11,12 +12,14 @@ const Game = () => {
   const [questionName,setQuestion] = useState(currentQuestion.question);
   const [answer,setAnswer] = useState();
   const [countQuestion,setCount] = useState(1);
-  const [timer,setTimer] = useState(30);
+  const [timer,setTimer] = useState(50000);
   const [options,setOptions] = useState([currentQuestion.option1,currentQuestion.option2,currentQuestion.option3,currentQuestion.option4])
   const [correctAnswer,setCorrectAnswer] = useState(data.questions[randomElement].answer);
   const [score,setScore] = useState(0);
   const [classCorrectAnswer, setClassCorrectAnswer] = useState("");
   const [isQuizFinished,setIsQuizFinished] = useState(false);
+  const [isSubmited,setIsSubmited] = useState(false);
+
 
 
   useEffect(() => {
@@ -26,14 +29,13 @@ const Game = () => {
 
     if(timer===0)
       setIsQuizFinished(() => true)
-  })
+  },[timer])
 
 
   const selectAnswer = (e) => {
     setAnswer(() => e.target.value)
     if(e.target.innerText === correctAnswer)
     {
-      // e.target.style.backgroundColor = "green";
       setClassCorrectAnswer(() => "greenBG");
       console.log(classCorrectAnswer)
       setScore((prev) => prev + 1);
@@ -55,11 +57,11 @@ const Game = () => {
 
   const submitAnswers = (e) => {
     if(countQuestion>4){
-      setIsQuizFinished(()=> true) 
+      setIsQuizFinished(()=> true)
+      setIsSubmited(true);
+      
       console.log(score);
     }else{
-      //let correctOption = document.querySelector('button').value(answer);
-      //correctOption.style.backgroundColor = "green"
       nextQuestion()
     }
   }
@@ -70,20 +72,40 @@ const Game = () => {
     <div className='game'>
         <Header/>
         {!isQuizFinished? 
-        (<div className='container'>
-          <h2 className='question'>Question {countQuestion}/5</h2>
-        <h3>Time Left: {timer}</h3>
+        (<div className='container'> 
+          <div className='question-row'>
+            <h1 style={{visibility:"hidden"}}>Blank</h1>
+            <h2 className='question'>Question {countQuestion}/5</h2>
+            <div className='timer-div'>
+              <img className='timerImg' src={require('./img/timer.png')} />
+              <h3 className='timer'> {timer} seconds</h3>
+            </div>
+          </div>
+         
+        
         
         <p className='sub-question'>{questionName}</p>
-        <div>
+        <div className='options'>
+          <div className='option'>
+            <p>A</p>
             <button  onClick={(e) => selectAnswer(e)} className={`but ${answer === 'a'?"hoverOption": "grey"}`}  value={"a"}>{options[0]}</button>
+          </div>
+          <div className='option'>
+            <p>B</p>
             <button  onClick={(e) => selectAnswer(e)} className={`but ${answer === 'b'?"hoverOption": "grey"}`} value={"b"}>{options[1]}</button>
+          </div>
+          <div className='option'>
+            <p>C</p>
             <button  onClick={(e) => selectAnswer(e)} className={`but ${answer === 'c'?"hoverOption": "grey"}`} value={"c"}>{options[2]}</button>
+          </div>
+          <div className='option'>
+            <p>D</p>
             <button  onClick={(e) => selectAnswer(e)} className={`but ${answer === 'd'?"hoverOption": "grey"}`} value={"d"}>{options[3]}</button>
+          </div>
       </div>
         
         <button onClick={(e) => submitAnswers(e)} className='next-button'>{countQuestion>=5? "Submit" : "Next Question"}</button> 
-        </div> ) : (<Result score={score} timer={timer}/>) }
+        </div> ) : (<Result score={score} timer={timer} isSubmited={isSubmited}/>) }
     </div>  
   )
 }

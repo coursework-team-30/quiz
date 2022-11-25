@@ -1,0 +1,35 @@
+.lead-container {
+    background-color: #224A94;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cupImg {
+    width: 240px;
+    height: 214px;
+}
+
+.lead-title {
+    font-size: 64px;
+    font-weight: 400;
+    font-family: 'Rakkas';
+    color: #ffff;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.tableHead {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60vw;
+}
+
+.nameH2, .scoreH2 {
+font-family: Rakkas;
+font-size: 48px;
+font-weight: 400;
+color: #ffff;
+
+}
