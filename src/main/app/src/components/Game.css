@@ -4,6 +4,8 @@
     flex-direction: column;
     align-items: center;
     height: 50vh;
+    margin-top: 10vh;
+
 }
 
 .game {
@@ -12,43 +14,102 @@
     align-items: center;
     font-family: 'Playfair Display', serif;
     font-family: 'Roboto Slab', serif;
-    background: url(../../public/bg.jpg);
     height: 100vh;
+    width: 100%;
+    color: white;
+    background-color: #224A94;
+}
+
+
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+
+
+.option > button {
+    margin: 0.5em 0.5em;
+    width: 100%;
+}
+
+
+
+.question {
+    font-size: 64px;
+    margin-left: 5vw;
 }
 
 
 .sub-question {
     margin-bottom: 2em;
+    font-size: 40px;
+}
+
+.question-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
 }
 
 
+.timer-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+padding: 0.8em;
+font-stretch: 50%;
+justify-content: center;
+}
+
+
+.timerImg {
+    width: 50.66px;
+    height: 70px;
+}
+
+
+
 .next-button {
-    background-color: rgb(79, 79, 250);
-    border: 1px solid rgb(1, 1, 194);
+    background-color: #FE9933;
+    border: none;
     color: white;
     margin-top: 5em;
     padding: 0.5em 2em;
-    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
     font-family: 'Playfair Display', serif;
     font-family: 'Roboto Slab', serif;
+    font-size: 20px;
 }
 
 .next-button:hover {
     cursor: pointer;
-    background-color: rgb(27, 27, 166);
+    background-color:  #e0760d;
    
 }
 
 .but {
     padding: 0.5em 5em;
-    background-color: grey;
+    background-color: #D3D3D3;
     border: 1px solid rgb(108, 107, 107);
     border-radius: 6px;
     margin-right: 2em;
-    color: rgb(240, 237, 237);
+    color: black;
     font-family: 'Playfair Display', serif;
     font-family: 'Roboto Slab', serif;
-    box-shadow: 2px 2px 1px #b8b8b8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
 }
 
 .but:hover {
@@ -62,6 +123,6 @@
 }
 
 .hoverOption {
-    background-color: rgb(221, 220, 220);
+    background-color: #f69b40;
     color: black;
 }

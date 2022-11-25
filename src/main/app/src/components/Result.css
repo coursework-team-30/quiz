@@ -1,0 +1,47 @@
+.badgeImg {
+    width: 200px;
+    height: 200px;
+}
+
+.score {
+    font-family: 'Rakkas', cursive;
+    font-weight: 400;
+    font-size: 96px;
+    margin-top: -3vh;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
+
+.content-div {
+    background-color:  #67E298;
+    color: black;
+    border-radius: 20px;
+    padding: 1em;
+    font-size: 20px;
+}
+
+.endRowDiv{
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    align-items: baseline;
+}
+
+.homeImg {
+    width: 71px;
+    height: 61px;
+}
+
+.homeImg:hover {
+    filter: invert(82%) sepia(2%) saturate(5805%) hue-rotate(187deg) brightness(89%) contrast(91%);
+    cursor: pointer;
+}
+
+.leaderBoardImg {
+    width: 65px;
+    height: 65px;
+}
+
+.leaderBoardImg:hover {
+    filter: invert(82%) sepia(2%) saturate(5805%) hue-rotate(187deg) brightness(89%) contrast(91%);
+    cursor: pointer;
+}
