@@ -12,7 +12,7 @@ const Game = () => {
   const [questionName,setQuestion] = useState(currentQuestion.question);
   const [answer,setAnswer] = useState();
   const [countQuestion,setCount] = useState(1);
-  const [timer,setTimer] = useState(50000);
+  const [timer,setTimer] = useState(120);
   const [options,setOptions] = useState([currentQuestion.option1,currentQuestion.option2,currentQuestion.option3,currentQuestion.option4])
   const [correctAnswer,setCorrectAnswer] = useState(data.questions[randomElement].answer);
   const [score,setScore] = useState(0);
@@ -59,7 +59,7 @@ const Game = () => {
     if(countQuestion>4){
       setIsQuizFinished(()=> true)
       setIsSubmited(true);
-      
+
       console.log(score);
     }else{
       nextQuestion()
