@@ -3,8 +3,12 @@ import Header from './Header'
 import './Game.css'
 import data from '../demoData'
 import Result from './Result'
+
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+
+// import timer from '../../public/img/timer.png'
+
 
 const Game = () => {
 
@@ -77,7 +81,7 @@ const Game = () => {
   }
 
 
-  const submitAnswers = (e) => {
+const submitAnswers = (e) => {
     if(countQuestion>4){
       setIsSubmited(true);
       routeChangeToResult();
@@ -88,7 +92,7 @@ const Game = () => {
   }
 
 
-  return (
+ return (
    
     <div className='game'>
         <Header/>

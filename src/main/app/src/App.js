@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Leaderboard from './components/Leaderboard';
 import Result from './components/Result';
 
+
 function App() {
   return (
     <div className="App">
