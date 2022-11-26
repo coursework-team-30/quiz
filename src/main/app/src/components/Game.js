@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import './Game.css'
-import data from '../demoData'
-import data2 from '../backendData'
 import Result from './Result'
 import axios from 'axios'
 import {useNavigate,useLocation} from 'react-router-dom'
@@ -57,16 +55,25 @@ const Game = () => {
   }
 
 
-  //  const getQuestions = async () => {
-  //   try {
-  //     const response = await axios.get('http://localhost:8091/api/quiz/get10');
-  //     console.log(response);
-  //   } catch(error) {
-  //     console.log(error);
-  //   }
-  // }
 
-  // getQuestions();
+  const handleSubmit = async () => {
+
+        const id = user.split('@')[0];
+
+        const bodyJSON = {
+            userName: id,
+            email : user,
+            score: score
+        }
+
+        await axios.post('http://localhost:8091/api/quiz/add', bodyJSON).then((res) => {
+            console.log("Scoreboard updated",res);
+        }).catch((err) => {
+            console.log(err);
+        })
+  }
+
+
 
 
   const nextQuestion = () => {
@@ -84,6 +91,7 @@ const Game = () => {
   const submitAnswers = (e) => {
     if(countQuestion>9){
       setIsSubmited(true);
+      handleSubmit();
       routeChangeToResult();
       console.log(score);
     }else{
