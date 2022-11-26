@@ -8,11 +8,13 @@ const Result = () => {
 
   const {state} = useLocation();
 
-  const {score,timer,isSubmited} = state;
+  const {score,timer,isSubmited,user,question} = state;
+
+  console.log(question)
 
     const routeToGame = ()=>{
       let path = `/game`;
-      navigate(path);
+      navigate(path,{state:{user:user,question:question}});
      }
 
      let navigate = useNavigate(); 
