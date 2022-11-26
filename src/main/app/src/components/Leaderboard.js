@@ -1,12 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Leaderboard.css'
 import {useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
 const Leaderboard = () => {
 
-    const table = [];
-    for(let i = 1 ; i < 6 ; i++)
-        table.push(<div className='table'><h1 className='number'>{i}</h1><div className='row'><p>Tom</p><p>10</p></div></div>)
+    const [score,setScore] = useState([])
+
+    React.useEffect(() => {
+      getScores();
+    },[])
+
+    async function getScores() {
+      await axios.get('http://localhost:8091/api/quiz/leaderboard').then((res) => {
+        console.log(res.data)
+        setScore(res.data)
+      }).catch((err) => {
+        console.log("NOT Found: ",err);
+      })
+    }
+
+
+    const table = []
+    for(let i = 0 ; i < score.length ; i++)
+      {
+        if(i<=4)
+        {
+          table.push(<div className='table'><h1 className='number'>{i+1}</h1><div className='row'><p>{score[i].userName}</p><p>{score[i].highScore}</p></div></div>)
+        }
+      }
+        
 
 
         let navigate = useNavigate(); 
