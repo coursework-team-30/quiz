@@ -36,7 +36,7 @@ const Result = () => {
         <img className='badgeImg' src={require('./img/Media.png')} />
         <h1 className='score'>SCORE:<span style={{marginLeft:"10px"}}>{score}</span></h1>
         <div className='content-div'>
-        <h1>{score===5 ? "Perfect Score! Well Done." : (score >=3 && score < 5) ? "Good try! Try Again." : "That's a bad score, try again!"}</h1>
+        <h1>{score===10 ? "Perfect Score! Well Done." : (score >=7 && score < 10) ? "Good try! Try Again." : "That's a bad score, try again!"}</h1>
         </div>  
 
         <div className='endRowDiv'>
