@@ -6,7 +6,6 @@ import com.uol.coursework.repository.QuestionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,13 +18,9 @@ public class QuesionsService {
         var data = questionsRepository.find10Questions();
 
         return data.stream().map(question -> {
-            var correctAnswer =  question.getCorrectAnswer();
-            var incorrectAnswers = question.getIncorrectAnswers();
-
-            ArrayList<String> options = incorrectAnswers;
+            var correctAnswer = question.getCorrectAnswer();
+            var options = question.getIncorrectAnswers();
             options.add(correctAnswer);
-
-            System.out.println(options);
 
             Collections.shuffle(options);
             return new Quiz(question.getQuestion(), options, correctAnswer);
