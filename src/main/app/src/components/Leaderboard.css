@@ -8,12 +8,12 @@
 }
 
 .cupImg {
-    width: 240px;
-    height: 214px;
+    width: 150px;
+    height: 136px;
 }
 
 .lead-title {
-    font-size: 64px;
+    font-size: 38px;
     font-weight: 400;
     font-family: 'Rakkas';
     color: #ffff;
@@ -24,12 +24,53 @@
     display: flex;
     justify-content: space-evenly;
     width: 60vw;
+    margin-top: -3vh;
 }
 
 .nameH2, .scoreH2 {
 font-family: Rakkas;
-font-size: 48px;
+font-size: 28px;
 font-weight: 400;
 color: #ffff;
 
+}
+
+
+.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1vh;
+}
+
+.row {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #D1C9C9;
+    width: 629px;
+    height: 42px;
+    border-radius: 10px;
+    border: 3px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.number {
+    font-weight: 400;
+    font-size: 25px;
+    font-weight: Rakkas;
+    color: #ffff;
+    margin-right: 0.5em;
+}
+
+.homeLeadImg {
+    width: 61px;
+    height: 51px;
+    margin-top: 6vh;
+}
+
+.homeLeadImg:hover {
+    filter: invert(82%) sepia(2%) saturate(5805%) hue-rotate(187deg) brightness(89%) contrast(91%);
+    cursor: pointer;
 }
