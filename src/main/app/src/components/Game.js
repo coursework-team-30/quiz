@@ -53,7 +53,7 @@ const Game = () => {
   let navigate = useNavigate(); 
   const routeChangeToResult = () =>{ 
     let path = `/result`; 
-    navigate(path, { state: { score:score, timer:timer, isSubmited:isSubmited } });
+    navigate(path, { state: { score:score, timer:timer, isSubmited:isSubmited,user:user,question:question } });
   }
 
 
@@ -128,7 +128,7 @@ const Game = () => {
           </div>
       </div>
         
-        <button onClick={(e) => submitAnswers(e)} className='next-button'>{countQuestion>=5? "Submit" : "Next Question"}</button> 
+        <button onClick={(e) => submitAnswers(e)} className='next-button'>{countQuestion>=10? "Submit" : "Next Question"}</button>
         </div> 
     </div>  
   )
