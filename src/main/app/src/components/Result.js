@@ -1,11 +1,18 @@
 import React from 'react'
 import './Result.css'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,useLocation} from 'react-router-dom'
+import Header from './Header'
 
-const Result = ({score,timer,isSubmited}) => {
+const Result = () => {
 
-    const refreshPage = ()=>{
-        window.location.reload();
+
+  const {state} = useLocation();
+
+  const {score,timer,isSubmited} = state;
+
+    const routeToGame = ()=>{
+      let path = `/game`;
+      navigate(path);
      }
 
      let navigate = useNavigate(); 
@@ -23,8 +30,9 @@ const Result = ({score,timer,isSubmited}) => {
 
 
   return (
-    <div style={{display:"flex",flexDirection:"column", alignItems:"center",backgroundColor:"#224A94"}}>
-        <h1>{(!timer && !isSubmited) ? "TIME OVER":""}</h1>
+    <div style={{display:"flex",flexDirection:"column", alignItems:"center",backgroundColor:"#224A94",height:"100vh"}}>
+        <Header />
+        <h1 className='timeOver'>{(!timer && !isSubmited) ? "TIME OVER":""}</h1>
         <img className='badgeImg' src={require('./img/Media.png')} />
         <h1 className='score'>SCORE:<span style={{marginLeft:"10px"}}>{score}</span></h1>
         <div className='content-div'>
@@ -33,7 +41,7 @@ const Result = ({score,timer,isSubmited}) => {
 
         <div className='endRowDiv'>
         <img onClick={routeToHome} className='homeImg' src={require('./img/Home.png')} />
-        <button onClick={refreshPage} className='next-button'>PLAY AGAIN</button> 
+        <button onClick={routeToGame} className='next-button'>PLAY AGAIN</button> 
         <img onClick={routeToLeaderBoard} className='leaderBoardImg' src={require('./img/leaderBoard.png')} />
         </div> 
         

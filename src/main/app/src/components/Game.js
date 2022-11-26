@@ -2,33 +2,39 @@ import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import './Game.css'
 import data from '../demoData'
+import data2 from '../backendData'
 import Result from './Result'
-// import timer from '../../public/img/timer.png'
+import axios from 'axios'
+import {useNavigate,useLocation} from 'react-router-dom'
 
 const Game = () => {
 
-  const randomElement = Math.floor(Math.random()*5)
-  const currentQuestion = data.questions[randomElement]
-  const [questionName,setQuestion] = useState(currentQuestion.question);
-  const [answer,setAnswer] = useState();
+  const {state} = useLocation();
+  const {user,question} = state;
+
+
   const [countQuestion,setCount] = useState(1);
+  const [questionName,setQuestion] = useState(question[0].question);
+  const [answer,setAnswer] = useState();
   const [timer,setTimer] = useState(120);
-  const [options,setOptions] = useState([currentQuestion.option1,currentQuestion.option2,currentQuestion.option3,currentQuestion.option4])
-  const [correctAnswer,setCorrectAnswer] = useState(data.questions[randomElement].answer);
+  const [options,setOptions] = useState([question[0].options[0],question[0].options[1],question[0].options[2],question[0].options[3]])
+  const [correctAnswer,setCorrectAnswer] = useState(question[0].correctAnswer);
   const [score,setScore] = useState(0);
   const [classCorrectAnswer, setClassCorrectAnswer] = useState("");
-  const [isQuizFinished,setIsQuizFinished] = useState(false);
   const [isSubmited,setIsSubmited] = useState(false);
 
 
 
   useEffect(() => {
+
     if(timer > 0){
       setTimeout(()=> setTimer(timer - 1),1000);
     }
 
     if(timer===0)
-      setIsQuizFinished(() => true)
+      {
+        routeChangeToResult();
+      }
   },[timer])
 
 
@@ -43,12 +49,32 @@ const Game = () => {
   }
 
 
+  
+  let navigate = useNavigate(); 
+  const routeChangeToResult = () =>{ 
+    let path = `/result`; 
+    navigate(path, { state: { score:score, timer:timer, isSubmited:isSubmited } });
+  }
+
+
+  //  const getQuestions = async () => {
+  //   try {
+  //     const response = await axios.get('http://localhost:8091/api/quiz/get10');
+  //     console.log(response);
+  //   } catch(error) {
+  //     console.log(error);
+  //   }
+  // }
+
+  // getQuestions();
+
+
   const nextQuestion = () => {
     if(answer){
-    setQuestion(() => currentQuestion.question)
-    setOptions(() => [currentQuestion.option1,currentQuestion.option2,currentQuestion.option3,currentQuestion.option4])
-    setCorrectAnswer(() => data.questions[randomElement].answer)
-    setCount((prev) => prev + 1)
+    setCount((prev) => prev + 1);
+    setQuestion(() => question[countQuestion].question)
+    setOptions(() => [question[countQuestion].options[0],question[countQuestion].options[1],question[countQuestion].options[2],question[countQuestion].options[3]])
+    setCorrectAnswer(() => question[countQuestion].correctAnswer)
     setAnswer(() => "")
     setClassCorrectAnswer(() => "")
    }
@@ -56,10 +82,9 @@ const Game = () => {
 
 
   const submitAnswers = (e) => {
-    if(countQuestion>4){
-      setIsQuizFinished(()=> true)
+    if(countQuestion>9){
       setIsSubmited(true);
-
+      routeChangeToResult();
       console.log(score);
     }else{
       nextQuestion()
@@ -71,11 +96,10 @@ const Game = () => {
    
     <div className='game'>
         <Header/>
-        {!isQuizFinished? 
-        (<div className='container'> 
+        <div className='container'> 
           <div className='question-row'>
             <h1 style={{visibility:"hidden"}}>Blank</h1>
-            <h2 className='question'>Question {countQuestion}/5</h2>
+            <h2 className='question'>Question {countQuestion}/10</h2>
             <div className='timer-div'>
               <img className='timerImg' src={require('./img/timer.png')} />
               <h3 className='timer'> {timer} seconds</h3>
@@ -105,7 +129,7 @@ const Game = () => {
       </div>
         
         <button onClick={(e) => submitAnswers(e)} className='next-button'>{countQuestion>=5? "Submit" : "Next Question"}</button> 
-        </div> ) : (<Result score={score} timer={timer} isSubmited={isSubmited}/>) }
+        </div> 
     </div>  
   )
 }

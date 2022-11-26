@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Start.css'
+import axios from 'axios'
+// import data from '../backendData'
 
 import {useNavigate} from 'react-router-dom'
 
@@ -7,21 +9,41 @@ const Start = () => {
 
     const [userName,setUserName] = useState("");
     const [isError,setIsError] = useState(true);
+    const [question, setQuestions] = useState([]);
 
+    React.useEffect(() => {
+      getQuestions();
+      console.log(question)
+    },[])
+
+      async function getQuestions() {
+            await axios.get('http://localhost:8091/api/quiz/get10').then((res) => {
+              console.log(res.data)
+              setQuestions(res.data)
+            }).catch((err) => {
+              console.log("NOT Found: ",err);
+            })
+       }
 
     let navigate = useNavigate(); 
     const routeChangeToLeaderBoard = () =>{ 
     let path = `leaderboard`; 
     navigate(path);
-  }
+    }
+
+
+    const pathToGame = () => {
+      let path = `game`;
+      navigate(path, {state: {question:question,user:userName}});
+    } 
+
 
     const routeToGame = () => {
         if(userName)
         {
             if(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(userName))
             {
-                let path = `game`;
-                navigate(path);
+              pathToGame();
             }
             else
             {
