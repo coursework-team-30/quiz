@@ -1,2 +1,16 @@
 GET http://localhost:8091/api/quiz/get10
 content-type: application/json
+
+###
+GET http://localhost:8091/api/quiz/leaderboard
+content-type: application/json
+
+###
+POST http://localhost:8091/api/quiz/add
+content-type: application/json
+
+{
+  "userName": "arjun",
+  "email": "arjun@gmail.com",
+  "score": "8"
+}
