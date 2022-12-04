@@ -1,0 +1,122 @@
+[
+  {
+    "id": 583,
+    "category": "Music",
+    "question": "Which band includes 'Rick Wakeman'?",
+    "correct_answer": "Yes",
+    "incorrect_answer1": "Orchestral Manoeuvres in the Dark",
+    "incorrect_answer2": "Nazareth",
+    "incorrect_answer3": "Bastille",
+    "question_type": "Multiple Choice",
+    "difficulty": "hard",
+    "identifier": "622a1c397cc59eab6f950d62"
+  },
+  {
+    "id": 347,
+    "category": "Film & TV",
+    "question": "Which film won the Academy Award for Best Picture in 1947?",
+    "correct_answer": "Gentleman's Agreement",
+    "incorrect_answer1": "The Bishop's Wife",
+    "incorrect_answer2": "Crossfire",
+    "incorrect_answer3": "Great Expectations",
+    "question_type": "Multiple Choice",
+    "difficulty": "hard",
+    "identifier": "622a1c347cc59eab6f94fb6c"
+  },
+  {
+    "id": 523,
+    "category": "History",
+    "question": "In which year was Nelson Mandela released from prison?",
+    "correct_answer": "1990",
+    "incorrect_answer1": "1980",
+    "incorrect_answer2": "1985",
+    "incorrect_answer3": "1995",
+    "question_type": "Multiple Choice",
+    "difficulty": "hard",
+    "identifier": "62611fca4b176d54800e3d71"
+  },
+  {
+    "id": 568,
+    "category": "Music",
+    "question": "Which British recording artist, singer, songwriter, musician and record producer released the studio album 'The Red Shoes'?",
+    "correct_answer": "Kate Bush",
+    "incorrect_answer1": "David Bowie",
+    "incorrect_answer2": "John Lennon",
+    "incorrect_answer3": "George Michael",
+    "question_type": "Multiple Choice",
+    "difficulty": "hard",
+    "identifier": "622a1c357cc59eab6f94fec2"
+  },
+  {
+    "id": 264,
+    "category": "Arts & Literature",
+    "question": "Which author wrote 'The Mysterious Mr Quin'?",
+    "correct_answer": "Agatha Christie",
+    "incorrect_answer1": "Robert Louis Stevenson",
+    "incorrect_answer2": "Charles Dickens",
+    "incorrect_answer3": "Lewis Carroll",
+    "question_type": "Multiple Choice",
+    "difficulty": "hard",
+    "identifier": "622a1c397cc59eab6f950f87"
+  },
+  {
+    "id": 692,
+    "category": "Society & Culture",
+    "question": "Which tree do Druids regard sacred ?",
+    "correct_answer": "Oak",
+    "incorrect_answer1": "Pine",
+    "incorrect_answer2": "Cedar",
+    "incorrect_answer3": "Walnut",
+    "question_type": "Multiple Choice",
+    "difficulty": "hard",
+    "identifier": "622a1c367cc59eab6f950109"
+  },
+  {
+    "id": 747,
+    "category": "Sport & Leisure",
+    "question": "Which country won the 1958 FIFA World Cup, hosted in Sweden?",
+    "correct_answer": "Brazil",
+    "incorrect_answer1": "France",
+    "incorrect_answer2": "Italy",
+    "incorrect_answer3": "West Germany",
+    "question_type": "Multiple Choice",
+    "difficulty": "hard",
+    "identifier": "62399f1aaf96521963a0871a"
+  },
+  {
+    "id": 259,
+    "category": "Arts & Literature",
+    "question": "In which book does 'Ali Baba' appear?",
+    "correct_answer": "One Thousand and One Nights",
+    "incorrect_answer1": "Charlotte's Web",
+    "incorrect_answer2": "Alice's Adventures in Wonderland",
+    "incorrect_answer3": "The Snow Queen",
+    "question_type": "Multiple Choice",
+    "difficulty": "medium",
+    "identifier": "622a1c3a7cc59eab6f951389"
+  },
+  {
+    "id": 256,
+    "category": "Arts & Literature",
+    "question": "Which artist painted \"American Gothic\"",
+    "correct_answer": "Grant Wood",
+    "incorrect_answer1": "Georges Seurat",
+    "incorrect_answer2": "Vincent van Gogh",
+    "incorrect_answer3": "Peter Paul Rubens",
+    "question_type": "Multiple Choice",
+    "difficulty": "hard",
+    "identifier": "622a1c347cc59eab6f94fa10"
+  },
+  {
+    "id": 643,
+    "category": "Science",
+    "question": "What would you call a male mule?",
+    "correct_answer": "A Jack",
+    "incorrect_answer1": "A Drake",
+    "incorrect_answer2": "A Tiercel",
+    "incorrect_answer3": "A Buck",
+    "question_type": "Multiple Choice",
+    "difficulty": "hard",
+    "identifier": "624334cbcfaae40c12961467"
+  }
+]
