@@ -5,6 +5,12 @@ public class NewScore {
     private String email;
     private int score;
 
+    public NewScore(String userName, String email, int score) {
+        this.userName = userName;
+        this.email = email;
+        this.score = score;
+    }
+
     public String getUserName() {
         return userName;
     }

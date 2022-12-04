@@ -1,0 +1,70 @@
+[{
+  "id": 4,
+  "user_name": "rohitkundeti",
+  "mail_id": "rohitkundeti@gmail.com",
+  "latest_score": 9,
+  "highest_score": 10
+},
+{
+"id": 5,
+"user_name": "irfan1999",
+"mail_id": "irfan1999@gmail.com",
+"latest_score": 9,
+"highest_score": 10
+},
+{
+"id": 2,
+"user_name": "ziggy",
+"mail_id": "ziggy4@gmail.com",
+"latest_score": 8,
+"highest_score": 9
+},
+{
+"id": 3,
+"user_name": "zohaib",
+"mail_id": "zohaib@gmail.com",
+"latest_score": 9,
+"highest_score": 9
+},
+{
+"id": 1,
+"user_name": "zack",
+"mail_id": "zack@gmail.com",
+"latest_score": 8,
+"highest_score": 8
+},
+{
+"id": 13,
+"user_name": "arjun",
+"mail_id": "arjun@gmail.com",
+"latest_score": 8,
+"highest_score": 8
+},
+{
+"id": 7,
+"user_name": "muzammil5",
+"mail_id": "muzammil5@gmail.com",
+"latest_score": 5,
+"highest_score": 7
+},
+{
+"id": 12,
+"user_name": "hammond1998",
+"mail_id": "hammond1998@gmail.com",
+"latest_score": 6,
+"highest_score": 7
+},
+{
+"id": 6,
+"user_name": "joey99",
+"mail_id": "joey99@gmail.com",
+"latest_score": 6,
+"highest_score": 6
+},
+{
+"id": 11,
+"user_name": "zayn",
+"mail_id": "zayn@gmail.com",
+"latest_score": 5,
+"highest_score": 6
+}]

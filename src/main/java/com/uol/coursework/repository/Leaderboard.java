@@ -26,6 +26,14 @@ public class Leaderboard {
 
     }
 
+    public Leaderboard(Long id, String userName, String mailId, Integer latestScore, Integer highestScore) {
+        this.id = id;
+        this.userName = userName;
+        this.mailId = mailId;
+        this.latestScore = latestScore;
+        this.highestScore = highestScore;
+    }
+
     public String getUserName() {
         return userName;
     }
