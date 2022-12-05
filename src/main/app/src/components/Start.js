@@ -68,7 +68,7 @@ const Start = () => {
               <h2 className='head2'>let's test your knowledge</h2>
           </div><div className='input-div'>
                   <h4 className={isError ? "errorMsg" : "errorMsgVisible"}>* Please enter a valid mail Id to start</h4>
-                  <input className='nameInput' onChange={(e)=> setUserNameFunc(e)} placeholder='Enter your email Address..'/>
+                  <input name='emailInput' className='nameInput' onChange={(e)=> setUserNameFunc(e)} placeholder='Enter your email Address..'/>
                   <button className='startButton' onClick={routeToGame}>Start</button>
               </div>
               <div className='endRow'>
