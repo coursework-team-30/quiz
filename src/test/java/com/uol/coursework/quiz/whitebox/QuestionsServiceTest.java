@@ -1,4 +1,4 @@
-package com.uol.coursework.quiz;
+package com.uol.coursework.quiz.whitebox;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

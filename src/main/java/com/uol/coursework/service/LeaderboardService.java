@@ -4,6 +4,7 @@ import com.uol.coursework.model.LeaderboardScorer;
 import com.uol.coursework.model.NewScore;
 import com.uol.coursework.repository.LeaderBoardRepository;
 import com.uol.coursework.repository.Leaderboard;
+import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,13 @@ public class LeaderboardService {
     @Transactional
     public LeaderboardScorer addScoreToLeaderboard(NewScore score) {
         var record = leaderBoardRepository.getRow(score.getUserName());
+        if (!EmailValidator.getInstance().isValid(score.getEmail())) {
+            throw new IllegalArgumentException("Email should be valid.");
+        }
         if (record == null) {
+            if (score.getScore() > 10) {
+                throw new IllegalArgumentException("Score should be in the range 0 to 10");
+            }
             Leaderboard data = new com.uol.coursework.repository.Leaderboard();
             data.setMailId(score.getEmail());
             data.setUserName(score.getUserName());

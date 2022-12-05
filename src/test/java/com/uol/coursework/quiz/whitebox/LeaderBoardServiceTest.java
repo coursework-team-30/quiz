@@ -1,4 +1,4 @@
-package com.uol.coursework.quiz;
+package com.uol.coursework.quiz.whitebox;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -56,15 +56,6 @@ public class LeaderBoardServiceTest {
     @Test
     public void checkLeaderBoardServiceForNull() {
         assertThat(leaderboardService).isNotNull();
-    }
-
-    @Test
-    public void testGetLeaderboardScoresNotNull() {
-        List<Leaderboard> data = this.prepareLeaderboardData();
-
-        when(leaderBoardRepository.getTopScores()).thenReturn(data);
-        var response = leaderboardService.getLeaderBoard();
-        assertThat(response).isNotNull();
     }
 
     @Test
