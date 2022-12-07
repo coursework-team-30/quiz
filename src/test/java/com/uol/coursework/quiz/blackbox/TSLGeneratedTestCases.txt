@@ -1,0 +1,43 @@
+Test Case 1          <error>
+   Questions :  6
+
+
+Test Case 2          <error>
+   Questions :  Null
+
+
+Test Case 3          <error>
+   LeaderBoard :  Null
+
+
+Test Case 4          <error>
+   Score :  >10
+
+
+Test Case 5          <error>
+   Score :  null
+
+
+Test Case 6          <error>
+   Email :  wrong
+
+
+Test Case 7          <error>
+   response :  null
+
+
+Test Case 8          (Key = 1.2.2.2.2.)
+   Questions   :  10
+   LeaderBoard :  10
+   Score       :  <=10
+   Email       :  correct
+   response    :  score
+
+
+Test Case 9          (Key = 1.3.2.2.2.)
+   Questions   :  10
+   LeaderBoard :  6
+   Score       :  <=10
+   Email       :  correct
+   response    :  score
+

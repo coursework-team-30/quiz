@@ -1,0 +1,26 @@
+ # get10Questions
+	Questions:
+		10.	[property valid]
+		6.	[error]
+		Null.	[error]
+#getLeaderBoard
+	LeaderBoard:
+		Null.	[error]
+		10.	[property perfect]
+		6.	[property good]
+#addScore
+	Score:
+		>10.	[error]
+		<=10.	[property valid]
+		null. [error]
+#email
+	Email:
+		wrong. [error]
+		correct. [property valid]
+#respone
+	response:
+		null. [error]
+		score. [property valid]
+		
+
+
